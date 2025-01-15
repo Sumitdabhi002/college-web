@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal</title>
+  <link rel="stylesheet" href="student_home.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <img id="profile-pic" src="https://via.placeholder.com/100" alt="Student Photo">
+    <h1>Welcome, jay</h1>
+    <p>Course: Computer Engineering | Roll No: 123456</p>
+    <button onclick="showSection('profile')">View Profile</button>
+  </header>
+
+  <!-- Navbar Section -->
+  <nav>
+    <ul>
+      <li><a href="#" onclick="showSection('attendance')">Attendance</a></li>
+      <li><a href="#" onclick="showSection('assignments')">Assignments</a></li>
+      <li><a href="#" onclick="showSection('results')">Results</a></li>
+      <li><a href="#" onclick="showSection('study-material')">Study Material</a></li>
+      <li><a href="#" onclick="showSection('timetable')">Timetable</a></li>
+      <li><a href="#" onclick="showSection('announcements')">Announcements</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content Section -->
+  <main>
+    <!-- Profile Section -->
+    <div id="profile" class="section">
+      <h2>Profile Details</h2>
+      <form id="profile-form">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" value="jay" readonly>
+        </div>
+        <div class="form-group">
+          <label for="course">Course:</label>
+          <input type="text" id="course" name="course" value="Computer Engineering" readonly>
+        </div>
+        <div class="form-group">
+          <label for="roll-no">Roll No:</label>
+          <input type="text" id="roll-no" name="roll-no" value="123456" readonly>
+        </div>
+        <div class="form-group">
+          <label for="profile-image">Upload Profile Image:</label>
+          <input type="file" id="profile-image" name="profile-image" accept="image/*" onchange="previewImage(event)">
+        </div>
+        <div class="form-group">
+          <button type="button" onclick="saveProfile()">Save Profile</button>
+        </div>
+      </form>
+      <div id="image-preview"></div>
+    </div>
+
+    <!-- Attendance Section -->
+    <div id="attendance" class="section">
+      <h2>Attendance</h2>
+      <div class="attendance-box">
+        <div class="attendance-item green">IPDC: 85%</div>
+        <div class="attendance-item red">Computer Network: 70%</div>
+        <div class="attendance-item green">Analysis and Design of Algorithms: 90%</div>
+        <div class="attendance-item red">Professional Ethics: 65%</div>
+        <div class="attendance-item green">Software Engineering: 80%</div>
+        <div class="attendance-item green">Python for Data Science: 88%</div>
+        <div class="attendance-item green">Cyber Security: 75%</div>
+      </div>
+    </div>
+
+    <!-- Assignments Section -->
+    <div id="assignments" class="section">
+      <h2>Assignments</h2>
+      <ul>
+        <li><button onclick="downloadAssignment('IPDC')">Download IPDC Assignment</button></li>
+        <li><button onclick="downloadAssignment('Computer Network')">Download Computer Network Assignment</button></li>
+        <li><button onclick="downloadAssignment('Analysis and Design of Algorithms')">Download Analysis and Design of Algorithms Assignment</button></li>
+        <li><button onclick="downloadAssignment('Professional Ethics')">Download Professional Ethics Assignment</button></li>
+        <li><button onclick="downloadAssignment('Software Engineering')">Download Software Engineering Assignment</button></li>
+        <li><button onclick="downloadAssignment('Python for Data Science')">Download Python for Data Science Assignment</button></li>
+        <li><button onclick="downloadAssignment('Cyber Security')">Download Cyber Security Assignment</button></li>
+      </ul>
+    </div>
+
+    <!-- Result Section -->
+    <div id="results" class="section">
+      <h2>Results</h2>
+      <ul>
+        <li><button onclick="downloadResult('IPDC')">Download IPDC Result (30 Marks)</button></li>
+        <li><button onclick="downloadResult('Computer Network')">Download Computer Network Result (30 Marks)</button></li>
+        <li><button onclick="downloadResult('Analysis and Design of Algorithms')">Download Analysis and Design of Algorithms Result (30 Marks)</button></li>
+        <li><button onclick="downloadResult('Professional Ethics')">Download Professional Ethics Result (30 Marks)</button></li>
+        <li><button onclick="downloadResult('Software Engineering')">Download Software Engineering Result (30 Marks)</button></li>
+        <li><button onclick="downloadResult('Python for Data Science')">Download Python for Data Science Result (30 Marks)</button></li>
+        <li><button onclick="downloadResult('Cyber Security')">Download Cyber Security Result (30 Marks)</button></li>
+      </ul>
+    </div>
+
+    <!-- Study Material Section -->
+    <div id="study-material" class="section">
+      <h2>Study Material</h2>
+      <ul>
+        <li><button onclick="downloadStudyMaterial('IPDC')">Download IPDC Study Material</button></li>
+        <li><button onclick="downloadStudyMaterial('Computer Network')">Download Computer Network Study Material</button></li>
+        <li><button onclick="downloadStudyMaterial('Analysis and Design of Algorithms')">Download Analysis and Design of Algorithms Study Material</button></li>
+        <li><button onclick="downloadStudyMaterial('Professional Ethics')">Download Professional Ethics Study Material</button></li>
+        <li><button onclick="downloadStudyMaterial('Software Engineering')">Download Software Engineering Study Material</button></li>
+        <li><button onclick="downloadStudyMaterial('Python for Data Science')">Download Python for Data Science Study Material</button></li>
+        <li><button onclick="downloadStudyMaterial('Cyber Security')">Download Cyber Security Study Material</button></li>
+      </ul>
+    </div>
+
+    <!-- Timetable Section -->
+    <div id="timetable" class="section">
+      <h2>Timetable</h2>
+      <button onclick="downloadTimetable()">Download Timetable</button>
+    </div>
+
+    <!-- Announcements Section -->
+    <div id="announcements" class="section">
+      <h2>Announcements</h2>
+      <ul>
+        <li>New Exam Schedule Released.</li>
+        <li>Python for Data Science Exam Postponed.</li>
+        <li>Cyber Security Guest Lecture on Friday.</li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Student Portal. All rights reserved.</p>
+  </footer>
+
+  <script src="student_home.js"></script>
+</body>
+</html>

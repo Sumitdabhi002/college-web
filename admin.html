@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <h1>Admin Dashboard</h1>
+    </div>
+    <div class="profile">
+        <h3>Admin Name</h3>
+        <p>Subject: Administration</p>
+        <p>Email: admin@example.com</p>
+        <p>Phone: 123-456-7890</p>
+    </div>
+</header>
+
+<div class="dashboard">
+    <div class="box" onclick="openModal('studentModal')">
+        <h3>Manage Students Information</h3>
+        <p>Add, update, or delete student details.</p>
+    </div>
+
+    <div class="box" onclick="openModal('marksModal')">
+        <h3>Manage Marks</h3>
+        <p>Add, update, or delete student marks.</p>
+    </div>
+
+    <div class="box" onclick="openModal('routineModal')">
+        <h3>Manage Class Routine</h3>
+        <p>Add, update, or delete class routines.</p>
+    </div>
+
+    <div class="box" onclick="openModal('eventModal')">
+        <h3>Manage Events</h3>
+        <p>Add, update, or delete events.</p>
+    </div>
+
+    <div class="box" onclick="openModal('attendanceModal')">
+        <h3>Manage Attendance</h3>
+        <p>Take attendance and update it.</p>
+    </div>
+
+    <div class="box" onclick="openModal('announcementModal')">
+        <h3>Share Announcements</h3>
+        <p>Post announcements for students and faculty.</p>
+    </div>
+
+    <div class="box" onclick="openModal('materialModal')">
+        <h3>Share Study Materials</h3>
+        <p>Share study materials in PDF format.</p>
+    </div>
+
+    <div class="box" onclick="openModal('profileModal')">
+        <h3>Profile Settings</h3>
+        <p>Manage your admin profile.</p>
+    </div>
+</div>
+
+<!-- Modals for different functionalities -->
+
+<!-- Student Management Modal -->
+<div id="studentModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('studentModal')">&times;</span>
+        <h2>Manage Student Information</h2>
+        <form>
+            <input type="text" placeholder="Student Name" required><br>
+            <input type="email" placeholder="Student Email" required><br>
+            <button type="submit">Add Student</button>
+        </form>
+    </div>
+</div>
+
+<!-- Marks Management Modal -->
+<div id="marksModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('marksModal')">&times;</span>
+        <h2>Manage Marks</h2>
+        <form>
+            <input type="text" placeholder="Student Name" required><br>
+            <input type="number" placeholder="Marks" required><br>
+            <button type="submit">Submit Marks</button>
+        </form>
+    </div>
+</div>
+
+<!-- Routine Management Modal -->
+<div id="routineModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('routineModal')">&times;</span>
+        <h2>Manage Class Routine</h2>
+        <form>
+            <input type="text" placeholder="Class Name" required><br>
+            <input type="text" placeholder="Class Time" required><br>
+            <button type="submit">Add Routine</button>
+        </form>
+    </div>
+</div>
+
+<!-- Event Management Modal -->
+<div id="eventModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('eventModal')">&times;</span>
+        <h2>Manage Events</h2>
+        <form>
+            <input type="text" placeholder="Event Name" required><br>
+            <input type="date" required><br>
+            <button type="submit">Add Event</button>
+        </form>
+    </div>
+</div>
+
+<!-- Attendance Management Modal -->
+<div id="attendanceModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('attendanceModal')">&times;</span>
+        <h2>Manage Attendance</h2>
+        <form>
+            <input type="text" placeholder="Student Name" required><br>
+            <input type="checkbox" name="attendance" value="present"> Present<br>
+            <button type="submit">Update Attendance</button>
+        </form>
+    </div>
+</div>
+
+<!-- Announcement Modal -->
+<div id="announcementModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('announcementModal')">&times;</span>
+        <h2>Share Announcements</h2>
+        <form>
+            <textarea placeholder="Enter your announcement here..." required></textarea><br>
+            <button type="submit">Post Announcement</button>
+        </form>
+    </div>
+</div>
+
+<!-- Study Material Modal -->
+<div id="materialModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('materialModal')">&times;</span>
+        <h2>Share Study Materials</h2>
+        <form>
+            <input type="file" accept="application/pdf" required><br>
+            <button type="submit">Upload Material</button>
+        </form>
+    </div>
+</div>
+
+<!-- Profile Modal -->
+<div id="profileModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('profileModal')">&times;</span>
+        <h2>Update Profile</h2>
+        <form>
+            <input type="text" placeholder="Name" required><br>
+            <input type="email" placeholder="Email" required><br>
+            <button type="submit">Update Profile</button>
+        </form>
+    </div>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>
